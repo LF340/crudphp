@@ -51,7 +51,7 @@ $result = mysqli_query($cn, "SELECT * FROM tb_kategori ")
                     echo"<tr>";
                     echo"<td>".$data['id_kategori']."</td>";
                     echo"<td>".$data['nama_kategori']."</td>";
-                    echo"<td> <a href='editk.php?id=$data[id]'>Edit</a> | <a href='deletek.php?id=$data[id]'>Delete</a> </td>";
+                    echo"<td> <a href='editk.php?id=$data[id_kategori]'>Edit</a> | <a href='deletek.php?id=$data[id_kategori]'>Delete</a> </td>";
 
 
                 }

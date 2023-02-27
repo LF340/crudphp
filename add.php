@@ -1,7 +1,9 @@
 <?php
      include 'config.php';
 
-     $relasi = mysqli_query($cn, "SELECT * FROM tb_barang INNER JOIN tb_kategori ON tb_barang.id_kategori = tb_kategori.id_kategori");
+    //  $relasi = mysqli_query($cn, "SELECT * FROM tb_barang INNER JOIN tb_kategori ON tb_barang.id_kategori = tb_kategori.id_kategori");
+
+        $relasi = mysqli_query($cn, "SELECT * FROM tb_kategori");
 
 
 ?>
@@ -26,11 +28,21 @@
                 <td><input type="number" name="jumlah"></td>
             </tr>
             <tr> 
+                 <td>Kategori</td>
+                <td>
                 <select name="id_kategori" id="">
-                w
+
+                    <option value="" disabled selected>Silahkan Pilih Kategori Anda</option>
+
+                    <?php
+                            while( $data = mysqli_fetch_array($relasi) ){
+                                echo"<option value='$data[id_kategori]'>". $data['nama_kategori'] . "</option>";
+        }
+                    ?>
 
 
                 </select>
+                </td>
             </tr>
             <tr> 
                 <td></td>
