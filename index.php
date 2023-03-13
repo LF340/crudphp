@@ -32,6 +32,14 @@
 
 ?>
 
+        <nav>
+        <a href="brg_msk.php">barang masuk</a>
+        <a href="kategori.php">Kategori</a>
+        <a href="index.php">Stok barang</a>
+
+        </nav>
+
+        <br>
 
 
     <a href="add.php">
@@ -52,6 +60,7 @@
 
         <thead>
             <th>Nama</th>
+            <th>Gambar</th>
             <th>Jumlah</th>
             <th>Kategori</th>
             <th>Action</th>
@@ -61,12 +70,17 @@
         <?php
         
             while( $data = mysqli_fetch_array($result) ){
-                
-                echo"<tr>";
-                echo"<td>".$data['nama']."</td>";
-                echo"<td>".$data['jumlah']."</td>";
-                echo"<td>".$data['nama_kategori']."</td>";
-                echo"<td><a href='edit.php?id=$data[id]'>Edit</a> | <a href='delete.php?id=$data[id]'>Delete</a></td></tr>";
+         ?>       
+                <tr>
+                <td> <?php echo $data['nama'] ?> </td>
+                <td><img src="upload/<?php echo $data['gambar']?>" width="150" height="150"></td>
+                <td> <?php echo $data['jumlah'] ?> </td>
+                <td> <?php echo $data['nama_kategori']?> </td>
+                <?php
+                echo" <td><a href='edit.php?id=$data[id]'>Edit</a> | <a href='delete.php?id=$data[id]'>Delete</a></td></tr> "   
+                ?>
+
+         <?php       
             }
         
         ?>

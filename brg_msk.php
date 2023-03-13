@@ -51,7 +51,7 @@
                     echo"<td>".$data['jumlah'] ."</td>";
                     echo"<td>".$data['harga'] ."</td>";
                     echo"<td>".$data['tgl'] ."</td>";
-                    echo"<td><a href='editbm.php?id=$data[id]'>Edit</a>  | <a href='deletebm.php?id=$data[id]'>Delete</a>  </td>";
+                    echo"<td><a href='editb.php?id=$data[id]'>Edit</a>  | <a href='deleteb.php?id=$data[id]'>Delete</a>  </td>";
                     echo"</tr>";
 
                 }
